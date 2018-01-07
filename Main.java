@@ -6,11 +6,22 @@ import com.lesson1.ex2.ex2_2.CorrectNumbers;
 import com.lesson1.ex2.ex2_3.SimpleDigits;
 import com.lesson1.ex2.ex2_4.WithoutRemainder;
 import com.lesson2.Matrix;
+import com.lesson3.Station;
+import com.lesson3.UsageClassTrain;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+       // UsageClassTrain usageClassTrain = new UsageClassTrain();
+       // usageClassTrain.searchedLocationTrain("Lviv", "Kyiv");
+
+        Station st = new Station();
+        for (String str : st.getLocations()){
+            System.out.println(str);
+        }
+
+
         /*Fibonacci fib = new Fibonacci(10);
         System.out.println(fib);
 
@@ -23,10 +34,14 @@ public class Main {
 
         WithoutRemainder withoutR = new WithoutRemainder(new int [] {11111, 22222, 44444, 8812233});*/
 
-        Matrix matrix = new Matrix();
+        /*Matrix matrix = new Matrix();
 
         matrix.printMatrix();
-        matrix.printSummOfElementsOfMatrix();
+        matrix.printSummOfElementsOfMatrix();*/
+
+
+
+
 
     }
 }
