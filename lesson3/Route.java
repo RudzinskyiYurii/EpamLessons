@@ -19,12 +19,69 @@ public class Route {
         setRoute(route);
     }
 
+    /**
+     * Return String time of the arrival
+     */
 
-    public String getTime (String key){
-        String listOfTime;
-        listOfTime = getRoute().get(key);
-        return listOfTime;
+    public String getArrivalTime (String key){
+        String  temp;
+        temp = getRoute().get(key);
+        int indexOfTheLine = 0;
+
+        StringBuilder strB = new StringBuilder();
+        StringBuilder arrivalTime = new StringBuilder();
+        strB.append(temp);
+        for (int i = 0; i < strB.length(); i++) {
+            if (strB.charAt(i) == '-') {
+                indexOfTheLine = i;
+            }
+        }
+        if (indexOfTheLine != 0){
+            for (int i = 0; i < indexOfTheLine; i++) {
+                arrivalTime.append(strB.charAt(i));
+            }
+        }
+        else
+            arrivalTime = strB;
+
+
+
+        return arrivalTime.toString();
     }
+
+    /**
+     * Return String time of the depatrure
+     */
+    public String getDepartureTime (String key){
+        String  temp;
+        temp = getRoute().get(key);
+        int indexOfTheLine = 0;
+
+        StringBuilder strB = new StringBuilder();
+        StringBuilder departureTime = new StringBuilder();
+        strB.append(temp);
+
+        for (int i = 0; i < strB.length(); i++) {
+            if (strB.charAt(i) == '-') {
+                indexOfTheLine = i;
+            }
+        }
+        if (indexOfTheLine != 0){
+            for (int i = indexOfTheLine + 1; i < strB.length(); i++) {
+                departureTime.append(strB.charAt(i));
+            }
+        }
+        else
+            departureTime = strB;
+
+        return departureTime.toString();
+    }
+
+
+
+
+
+
 
     /**
      *  Check if order of locations requets are observed

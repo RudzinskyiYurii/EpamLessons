@@ -15,8 +15,11 @@ public class Main {
         for (Train t : rlsv.locationsSearch("Lviv", "Kyiv")){
             System.out.println(t);
         }
-        //for (Train t : rlsv.getListOfTrains())
-        //    System.out.println(t);
+
+        for (Train t : rlsv.getListOfTrains()){
+            System.out.println(t.getRoute().getDepartureTime("Kyiv"));
+        }
+
 
 
 

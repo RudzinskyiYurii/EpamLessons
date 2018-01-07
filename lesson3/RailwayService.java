@@ -1,9 +1,6 @@
 package com.lesson3;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class RailwayService {
 
@@ -70,6 +67,61 @@ public class RailwayService {
         }
 
         return searchedListOfTrains;
+    }
+
+
+
+
+
+    public ArrayList<Train> afterSetTimeTrains (String time){
+
+        ArrayList<Train> listOfAfterSetTimeTrains = new ArrayList<>();
+
+        for (Train t : listOfTrains){
+            Set set = t.getRoute().getRoute().entrySet();
+
+            Iterator itr1 = set.iterator();
+            while (itr1.hasNext()){
+                Map.Entry me = (Map.Entry)itr1.next();
+                if (isTimeMore(t.getRoute().getDepartureTime((String)me.getKey()) , time)){
+                    listOfAfterSetTimeTrains.add(t);
+                }
+
+            }
+        }
+
+
+        return listOfAfterSetTimeTrains;
+
+    }
+
+    public boolean isTimeMore (String firstTime, String secondTime){
+        StringBuilder strOne = new StringBuilder();
+        StringBuilder strTwo = new StringBuilder();
+
+        StringBuilder strOneTemp = new StringBuilder();
+        StringBuilder strTwoTemp = new StringBuilder();
+
+        boolean checkMinutes = false;
+        boolean checkHours = false;
+
+        strOne.append(firstTime);
+        strTwo.append(secondTime);
+
+        for(int i = 3; i < 5; i++)
+            strOneTemp.append(strOne.charAt(i));
+        for(int i = 3; i < 5; i++)
+            strTwoTemp.append(strTwo.charAt(i));
+        if (Integer.parseInt(strTwoTemp.toString()) > Integer.parseInt(strOneTemp.toString()))
+            checkMinutes = true;
+        for(int i = 0; i < 2; i++)
+            strOneTemp.append(strOne.charAt(i));
+        for(int i = 0; i < 2; i++)
+            strTwoTemp.append(strTwo.charAt(i));
+        if (Integer.parseInt(strTwoTemp.toString()) > Integer.parseInt(strOneTemp.toString()))
+            checkHours = true;
+
+        return checkHours & checkMinutes;
     }
 
 }
