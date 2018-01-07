@@ -1,13 +1,6 @@
 package com;
 
-import com.lesson1.ex1.Fibonacci;
-import com.lesson1.ex2.ex2_1.Sort;
-import com.lesson1.ex2.ex2_2.CorrectNumbers;
-import com.lesson1.ex2.ex2_3.SimpleDigits;
-import com.lesson1.ex2.ex2_4.WithoutRemainder;
-import com.lesson2.Matrix;
 import com.lesson3.Station;
-import com.lesson3.UsageClassTrain;
 
 public class Main {
 

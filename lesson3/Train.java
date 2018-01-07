@@ -5,35 +5,42 @@ import java.util.ArrayList;
 public class Train {
 
 
-
-
+    private String ID;
+    private Route route;
     private int freeSeats;
-    private String location;
-    private ArrayList<Station> listOfStation;
+    private String notes;
+
 
 
     public Train (){
 
-        setFreeSeats(100);
-        listOfStation.add(new Station());
+
     }
 
-    public Train (int freeSeats, ArrayList<Station> listOfStations){
+    public Train (String ID, Route route, int freeSeats, String notes){
 
-        setListOfStation(listOfStations);
+        setID(ID);
+        setRoute(route);
         setFreeSeats(freeSeats);
-
+        setNotes(notes);
 
     }
 
-    public ArrayList<Station> getListOfStation() {
-        return listOfStation;
+    public String getID() {
+        return ID;
     }
 
-    public void setListOfStation(ArrayList<Station> listOfStation) {
-        this.listOfStation = listOfStation;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
+    }
 
     public int getFreeSeats() {
         return freeSeats;
@@ -41,6 +48,14 @@ public class Train {
 
     public void setFreeSeats(int freeSeats) {
         this.freeSeats = freeSeats;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
 
