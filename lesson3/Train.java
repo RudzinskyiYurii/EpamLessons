@@ -58,6 +58,8 @@ public class Train {
         this.notes = notes;
     }
 
-
-
+    @Override
+    public String toString() {
+        return ID + " " + getRoute() ;
+    }
 }

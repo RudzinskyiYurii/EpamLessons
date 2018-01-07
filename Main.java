@@ -1,6 +1,8 @@
 package com;
 
+import com.lesson3.RailwayService;
 import com.lesson3.Station;
+import com.lesson3.Train;
 
 public class Main {
 
@@ -9,10 +11,14 @@ public class Main {
        // UsageClassTrain usageClassTrain = new UsageClassTrain();
        // usageClassTrain.searchedLocationTrain("Lviv", "Kyiv");
 
-        Station st = new Station();
-        for (String str : st.getLocations()){
-            System.out.println(str);
+        RailwayService rlsv = new RailwayService();
+        for (Train t : rlsv.locationsSearch("Lviv", "Kyiv")){
+            System.out.println(t);
         }
+        //for (Train t : rlsv.getListOfTrains())
+        //    System.out.println(t);
+
+
 
 
         /*Fibonacci fib = new Fibonacci(10);
