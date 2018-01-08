@@ -98,42 +98,13 @@ public class RailwayService {
                     listOfAfterSetTimeTrains.add(t);
                     break;
                 }
-
             }
         }
-
 
         return listOfAfterSetTimeTrains;
 
     }
 
-    public boolean isTimeMore (String firstTime, String secondTime){
-        StringBuilder strOne = new StringBuilder();
-        StringBuilder strTwo = new StringBuilder();
 
-        StringBuilder strOneTemp = new StringBuilder();
-        StringBuilder strTwoTemp = new StringBuilder();
-
-        boolean checkMinutes = false;
-        boolean checkHours = false;
-
-        strOne.append(firstTime);
-        strTwo.append(secondTime);
-
-        for(int i = 3; i < 5; i++)
-            strOneTemp.append(strOne.charAt(i));
-        for(int i = 3; i < 5; i++)
-            strTwoTemp.append(strTwo.charAt(i));
-        if (Integer.parseInt(strTwoTemp.toString()) > Integer.parseInt(strOneTemp.toString()))
-            checkMinutes = true;
-        for(int i = 0; i < 2; i++)
-            strOneTemp.append(strOne.charAt(i));
-        for(int i = 0; i < 2; i++)
-            strTwoTemp.append(strTwo.charAt(i));
-        if (Integer.parseInt(strTwoTemp.toString()) > Integer.parseInt(strOneTemp.toString()))
-            checkHours = true;
-
-        return checkHours & checkMinutes;
-    }
 
 }
