@@ -4,6 +4,11 @@ import com.lesson3.RailwayService;
 import com.lesson3.Station;
 import com.lesson3.Train;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,11 +21,18 @@ public class Main {
             System.out.println(t);
         }
 
+        System.out.println();
+
         for (Train t : rlsv.getListOfTrains()){
             System.out.println(t.getRoute().getDepartureTime("Kyiv"));
         }
 
+        System.out.println();
 
+        String dateOne = "2018-01-06 17:02";
+        for (Train t : rlsv.afterSetTimeTrains(dateOne)){
+            System.out.println(t);
+        }
 
 
 

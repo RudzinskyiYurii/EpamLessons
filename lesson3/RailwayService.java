@@ -1,5 +1,7 @@
 package com.lesson3;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class RailwayService {
@@ -22,19 +24,19 @@ public class RailwayService {
     private void createrMethod (){
 
         LinkedHashMap<String, String> Lviv_Odessa_route = new LinkedHashMap<>();
-        Lviv_Odessa_route.put("Lviv","01:30");
-        Lviv_Odessa_route.put("Kyiv", "07:15-07:30");
-        Lviv_Odessa_route.put("Odessa", "16:23");
+        Lviv_Odessa_route.put("Lviv","2018-01-06 01:30");
+        Lviv_Odessa_route.put("Kyiv", "2018-01-06 07:15*2018-01-06 07:30");
+        Lviv_Odessa_route.put("Odessa", "2018-01-06 16:23");
 
         LinkedHashMap<String, String> IvanoFr_Kyiv_route = new LinkedHashMap<>();
-        IvanoFr_Kyiv_route.put("Ivano-Frankivsk", "17:01");
-        IvanoFr_Kyiv_route.put("Lviv", "19:40-20:05");
-        IvanoFr_Kyiv_route.put("Kyiv", "01:12");
+        IvanoFr_Kyiv_route.put("Ivano-Frankivsk", "2018-01-06 17:01");
+        IvanoFr_Kyiv_route.put("Lviv", "2018-01-06 19:40-2018-01-06 20:05");
+        IvanoFr_Kyiv_route.put("Kyiv", "2018-01-07 01:12");
 
         LinkedHashMap<String, String> Kyiv_IvanoFr_route = new LinkedHashMap<>();
-        Kyiv_IvanoFr_route.put("Kyiv", "07:13");
-        Kyiv_IvanoFr_route.put("Lviv", "12:45-13:15");
-        Kyiv_IvanoFr_route.put("Ivano-Frankivsk", "16:50");
+        Kyiv_IvanoFr_route.put("Kyiv", "2018-01-06 07:13");
+        Kyiv_IvanoFr_route.put("Lviv", "2018-01-06 12:45*2018-01-06 13:15");
+        Kyiv_IvanoFr_route.put("Ivano-Frankivsk", "2018-01-06 16:50");
 
         Route Lviv_Odessa = new Route(Lviv_Odessa_route);
 
@@ -77,14 +79,24 @@ public class RailwayService {
 
         ArrayList<Train> listOfAfterSetTimeTrains = new ArrayList<>();
 
+        DateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm");
+        Date date = null;
+        try{
+            date = format.parse(time);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
         for (Train t : listOfTrains){
             Set set = t.getRoute().getRoute().entrySet();
 
             Iterator itr1 = set.iterator();
             while (itr1.hasNext()){
                 Map.Entry me = (Map.Entry)itr1.next();
-                if (isTimeMore(t.getRoute().getDepartureTime((String)me.getKey()) , time)){
+                if (t.getRoute().getDepartureTime((String)me.getKey()).getTime() > date.getTime()){
                     listOfAfterSetTimeTrains.add(t);
+                    break;
                 }
 
             }
