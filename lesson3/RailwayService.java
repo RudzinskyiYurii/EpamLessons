@@ -1,5 +1,6 @@
 package com.lesson3;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -80,6 +81,71 @@ public class RailwayService {
         return searchedListOfTrains;
     }
 
+    /**
+     * return array list of the closest trains which are passed the set station by first letter
+     */
+
+    public ArrayList<Train> searchByLocation (char firstLetter){
+
+        ArrayList<Train> searchedListOfTrains = new ArrayList<>();
+
+        for (Train t : listOfTrains){
+            for (char ch : t.getRoute().listOfTheFirstLettersOfTheStations()){
+                if (ch == firstLetter){
+                    searchedListOfTrains.add(t);
+                }
+            }
+        }
+
+        return searchedListOfTrains;
+    }
+    /**
+     * overload method return array list of the trains which are passed the set station by station
+     */
+
+    public ArrayList<Train> searchByLocation (String location){
+
+        ArrayList<Train> searchedListOfTrains = new ArrayList<>();
+
+        ArrayList<Train> listOfTrainsClosestToCurrentTime = new ArrayList<>();
+        listOfTrainsClosestToCurrentTime = afterSetTimeTrains("2018-01-06 12:00"); // current date
+
+        for (Train t : listOfTrainsClosestToCurrentTime){
+                if (t.getRoute().getRoute().containsKey(location)){
+                    searchedListOfTrains.add(t);
+                }
+
+        }
+
+        return searchedListOfTrains;
+    }
+
+    /**
+     * Return list of closest trains in order of the free seats
+     * @param location
+     * @return
+     */
+
+    public ArrayList<Train> listOfClosestTrainsByFreeSeats (String location){
+
+        ArrayList<Train> searchedListOfTrains = new ArrayList<>();
+        Train tempTrain;
+
+        searchedListOfTrains = afterSetTimeTrains("2018-01-06 12:00"); // current date
+
+        for (Train t : searchedListOfTrains) {
+            for (int i = 0; i < searchedListOfTrains.size() - 1; i++) {
+                if (searchedListOfTrains.get(i).getFreeSeats() < searchedListOfTrains.get(i + 1).getFreeSeats()) {
+                    tempTrain = searchedListOfTrains.get(i);
+                    searchedListOfTrains.set(i, searchedListOfTrains.get(i + 1));
+                    searchedListOfTrains.set(i + 1, tempTrain);
+                }
+            }
+        }
+
+
+        return searchedListOfTrains;
+    }
 
     /**
      * return array list of the train which are sent after transmitted time
@@ -111,6 +177,10 @@ public class RailwayService {
         }
 
         return listOfAfterSetTimeTrains;
-
     }
+
+
+
+
+
 }

@@ -14,7 +14,6 @@ public class Train {
 
     public Train (){
 
-
     }
 
     public Train (String ID, Route route, int freeSeats, String notes){

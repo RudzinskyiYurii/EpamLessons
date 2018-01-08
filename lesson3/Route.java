@@ -60,7 +60,7 @@ public class Route {
     }
 
     /**
-     * Return date of the depatrure
+     * Return date of the departure
      */
     public Date getDepartureTime (String key){
 
@@ -98,7 +98,23 @@ public class Route {
     }
 
 
+    public ArrayList<Character> listOfTheFirstLettersOfTheStations (){
+        ArrayList<Character> firstLetter = new ArrayList<>();
 
+
+        Set set = route.entrySet();
+
+        Iterator itr1 = set.iterator();
+        while (itr1.hasNext()){
+            StringBuilder strB = new StringBuilder();
+            Map.Entry me = (Map.Entry)itr1.next();
+            strB.append(me.getKey());
+            firstLetter.add(strB.charAt(0));
+        }
+
+
+        return firstLetter;
+    }
 
 
 

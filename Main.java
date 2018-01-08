@@ -1,13 +1,7 @@
 package com;
 
 import com.lesson3.RailwayService;
-import com.lesson3.Station;
 import com.lesson3.Train;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Main {
 
@@ -21,19 +15,29 @@ public class Main {
             System.out.println(t);
         }
 
-        System.out.println();
+        System.out.println("\ndeparture time of station:\n");
 
         for (Train t : rlsv.getListOfTrains()){
             System.out.println(t.getRoute().getDepartureTime("Kyiv"));
         }
 
-        System.out.println();
+        System.out.println("\nTime search:\n");
 
         String dateOne = "2018-01-06 17:02";
         for (Train t : rlsv.afterSetTimeTrains(dateOne)){
             System.out.println(t);
         }
 
+        System.out.println("\nLetter search:\n");
+
+        for (Train t : rlsv.searchByLocation('O')){
+            System.out.println(t);
+        }
+
+        System.out.println("\nFree seats search:\n");
+
+        for (Train t : rlsv.listOfClosestTrainsByFreeSeats("Lviv"))
+            System.out.println(t);
 
 
         /*Fibonacci fib = new Fibonacci(10);
