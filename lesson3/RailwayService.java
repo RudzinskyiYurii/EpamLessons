@@ -21,6 +21,11 @@ public class RailwayService {
 
     ArrayList<Train> listOfTrains = new ArrayList<>();
 
+
+    /**
+     * Create instances of the trains and routes
+     */
+
     private void createrMethod (){
 
         LinkedHashMap<String, String> Lviv_Odessa_route = new LinkedHashMap<>();
@@ -57,6 +62,10 @@ public class RailwayService {
 
     }
 
+
+    /**
+     * return array list of all the trains which are sent from .. to ..
+     */
     public ArrayList<Train> locationsSearch (String from, String where){
 
         ArrayList<Train> searchedListOfTrains = new ArrayList<>();
@@ -72,9 +81,9 @@ public class RailwayService {
     }
 
 
-
-
-
+    /**
+     * return array list of the train which are sent after transmitted time
+     */
     public ArrayList<Train> afterSetTimeTrains (String time){
 
         ArrayList<Train> listOfAfterSetTimeTrains = new ArrayList<>();
@@ -104,7 +113,4 @@ public class RailwayService {
         return listOfAfterSetTimeTrains;
 
     }
-
-
-
 }
