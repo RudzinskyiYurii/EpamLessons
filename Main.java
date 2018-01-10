@@ -1,15 +1,18 @@
 package com;
 
-import com.lesson3.RailwayService;
-import com.lesson3.Train;
+import com.lesson4.UsageString;
 
 public class Main {
 
     public static void main(String[] args) {
 
-       // UsageClassTrain usageClassTrain = new UsageClassTrain();
-       // usageClassTrain.searchedLocationTrain("Lviv", "Kyiv");
 
+        UsageString usS = new UsageString();
+
+        //System.out.println(usS.changeDuplicates());
+        System.out.println(usS.formatStringByRightSide());
+
+       /*
         RailwayService rlsv = new RailwayService();
         for (Train t : rlsv.locationsSearch("Lviv", "Kyiv")){
             System.out.println(t);
@@ -38,6 +41,7 @@ public class Main {
 
         for (Train t : rlsv.listOfClosestTrainsByFreeSeats("Lviv"))
             System.out.println(t);
+        */
 
 
         /*Fibonacci fib = new Fibonacci(10);
