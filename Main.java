@@ -1,18 +1,38 @@
 package com;
 
 import com.lesson4.ex1_ex2.UsageString;
+import com.lesson4.ex3.BurrowsWheelerAlgorithm;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        UsageString usS = new UsageString();
+        BurrowsWheelerAlgorithm bwAlgorithm = new BurrowsWheelerAlgorithm();
+        System.out.println("Result of the algorithm`s work:\n");
+
+        for(String st : bwAlgorithm.algorithmBurrowsWheeler("java"))
+            System.out.println(st);
+
+        System.out.println("Sorted array:\n");
+
+        for(String st : bwAlgorithm.sort("java"))
+            System.out.println(st);
+
+        System.out.println("Last characters of the strings in sorted array:\n");
+
+        for (char ch : bwAlgorithm.lastCharacters("java"))
+            System.out.println(ch);
+
+
+        /*UsageString usS = new UsageString();
 
         //System.out.println(usS.changeDuplicates());
         System.out.println(usS.formatStringByRightSide());
+        */
 
-       /*
+        /*
         RailwayService rlsv = new RailwayService();
         for (Train t : rlsv.locationsSearch("Lviv", "Kyiv")){
             System.out.println(t);
