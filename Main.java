@@ -1,6 +1,6 @@
 package com;
 
-import com.lesson4.UsageString;
+import com.lesson4.ex1_ex2.UsageString;
 
 public class Main {
 

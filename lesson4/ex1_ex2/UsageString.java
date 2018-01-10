@@ -1,4 +1,4 @@
-package com.lesson4;
+package com.lesson4.ex1_ex2;
 
 import java.util.Scanner;
 import java.util.StringJoiner;
@@ -55,7 +55,7 @@ public class UsageString {
                 tempLength = 0;
             }
         }
-        //lineLength--;
+
         for (int i = 0;i < inputText.length(); i++){
 
             tempLine.append(inputText.charAt(i));
