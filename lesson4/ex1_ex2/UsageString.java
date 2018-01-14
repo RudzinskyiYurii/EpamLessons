@@ -5,8 +5,8 @@ import java.util.StringJoiner;
 
 public class UsageString {
 
-    private static final String FINISH = "..";
-    //private static final String FINISH = "2";
+    private static final String FINISH = ".."; //string which end the inputing (Linux can`t add me the chance to use for example Ctrl+C)
+
 
 
     /**
@@ -19,7 +19,9 @@ public class UsageString {
 
         StringBuilder inputText = consoleRead();
 
-        for (int j = 0; j < inputText.length(); j++) {
+        for (int j = 0; j < inputText.length(); j++) {//we need to check things below how many times how many characters we have
+
+            //check for the equals characters
             for (int i = 0; i < inputText.length() - 1; i++) {
                 if (inputText.charAt(i) == inputText.charAt(i + 1)) {
                    inputText.deleteCharAt(i);
@@ -45,9 +47,10 @@ public class UsageString {
         int lineLength = 0; // length of the line
         int tempLength = 0;
 
-        //take maximum length + 1 of imputed text
+        //take maximum length + 1 in the line of imputed text
         for (int i = 0;i < inputText.length(); i++){
             tempLength++;
+            /*Check if found the symbol of the next line compare to length*/
             if (inputText.charAt(i) == '\n') {
                 if (tempLength > lineLength) {
                     lineLength = tempLength;
@@ -60,11 +63,14 @@ public class UsageString {
 
             tempLine.append(inputText.charAt(i));
                 if (inputText.charAt(i) == '\n') {
+                    /*If length of the current line is smaller than line length, which we found above
+                    * we add ' ' (space) to the beginning of the line, which begin after symbol '\n' (new line),
+                    * in quantity if difference between max length of the line and length of the current line*/
                     for (int j = (lineLength - tempLine.length()); j > 0; j--){
                         tempLine.insert(0, ' ');
                     }
-                    formatedLine.append(tempLine);
-                    tempLine = new StringBuilder();
+                    formatedLine.append(tempLine);//add formatted line
+                    tempLine = new StringBuilder();//nullify temp strings
 
                 }
         }
@@ -81,7 +87,7 @@ public class UsageString {
     private String nextLine(Scanner in) {
         String line = in.nextLine();
         if (line != null) {
-            line = line.trim();
+            line = line.trim();//delete all spaces to take current line
         }
         return line;
     }
@@ -98,14 +104,14 @@ public class UsageString {
 
         while (scanner.hasNext()) {
             String line = nextLine(scanner);
-            if (FINISH.equals(line)) {
-                break;
+            if (FINISH.equals(line)) {// check if the line is finish string
+                break;//end of the inputing
             } else {
                 inputText.append(line);
                 inputText.append("\n");
             }
         }
-        //inputText.deleteCharAt(inputText.length() - 1);
+
 
         return inputText;
     }
