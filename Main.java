@@ -1,14 +1,41 @@
 package com;
 
-import com.lesson4.ex1_ex2.UsageString;
-import com.lesson4.ex3.BurrowsWheelerAlgorithm;
-import com.sun.org.apache.xpath.internal.SourceTree;
+import com.lesson6.CafePoint.CafePointService;
+import com.lesson6.classwork.UsageGeneric;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
+        CafePointService cafeSer = new CafePointService();
+        cafeSer.usageCafePoint();
+
+
+        /*
+
+        List<Integer> listOfIntegers = new LinkedList<>();
+
+        listOfIntegers.add(1);
+        listOfIntegers.add(4);
+        listOfIntegers.add(7);
+
+        List<String> listOfString = new LinkedList<>();
+
+        listOfString.add("101");
+        listOfString.add("sdfds");
+
+        UsageGeneric<Integer> usGenericInteger = new UsageGeneric<>();
+        usGenericInteger.getCount(listOfIntegers);
+
+        UsageGeneric<String> usageGenericString = new UsageGeneric<>();
+        usageGenericString.getCount(listOfString);
+*/
+
+/*
         BurrowsWheelerAlgorithm bwAlgorithm = new BurrowsWheelerAlgorithm();
         System.out.println("Result of the algorithm`s work:\n");
 
@@ -25,7 +52,7 @@ public class Main {
         for (char ch : bwAlgorithm.lastCharacters("java"))
             System.out.println(ch);
 
-
+*/
         /*UsageString usS = new UsageString();
 
         //System.out.println(usS.changeDuplicates());

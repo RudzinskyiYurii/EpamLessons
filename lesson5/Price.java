@@ -9,11 +9,7 @@ public abstract class Price {
         // add bonus for a two day new release rental
         return 1;
     }
-/*
-    Points() {
 
-    }
-*/
     abstract int getPriceCode();
 }
 
