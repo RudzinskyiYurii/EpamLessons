@@ -1,5 +1,7 @@
 package com.lesson6.CafePoint;
 
+
+
 public abstract class Addons {
 
         abstract public double getPrice();
@@ -7,7 +9,7 @@ public abstract class Addons {
 
     }
 
-    class Cream extends Addons {
+class Cream extends Addons {
 
         private int quantity;
 

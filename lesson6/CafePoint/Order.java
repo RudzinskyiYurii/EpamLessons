@@ -5,17 +5,36 @@ import java.util.List;
 
 public class Order<E extends Addons> {
 
-    private List<E> currentOrder = new LinkedList<>();
+    private List<E> addonsOrder = new LinkedList<>();
+    Coffee coffee;
+    //private List<Coffee> coffeeOrder = new LinkedList<>();
 
+    // add some addons
     public void addAddon (E addon){
-        currentOrder.add(addon);
+        addonsOrder.add(addon);
+    }
+
+    //add coffee
+    public void addCoffee (Coffee coffee){
+        this.coffee = coffee;
     }
 
     public void printOrder(){
-        if (currentOrder != null){
-            for (Addons add : currentOrder){
+        // checking for not null order list
+        if (addonsOrder != null){
+            //print info
+            coffee.printInfo();
+            for (Addons add : addonsOrder){
                 add.printInfo();
             }
         }
+        else
+            System.out.println("There are no one addons have been used");
+    }
+
+    public double getOrderPrice (){
+        double orderPrice = 0;
+
+        return orderPrice;
     }
 }
