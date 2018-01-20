@@ -17,7 +17,12 @@ public class Coffee {
         return quantity * 3;
     }
 
+    public int getBonucePrice (){
+        return quantity * 3000;
+    }
+
     public void printInfo (){
-        System.out.println("U have been ordered x" + quantity + " coffee");
+        System.out.println("U have been ordered:\n" + "coffee x"+ quantity + "\t\t\t|\t" + getPrice() +
+                "$ \tor\t" + getBonucePrice() + " bonuces.");
     }
 }

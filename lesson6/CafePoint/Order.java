@@ -27,6 +27,9 @@ public class Order<E extends Addons> {
             for (Addons add : addonsOrder){
                 add.printInfo();
             }
+            System.out.println("-----------------------------------------------");
+            System.out.println("sum: " + "\t\t\t\t|\t" + getOrderPrice() + "$\tor\t" +
+            getOrderBonucePrice() + " bonuces.\n");
         }
         else
             System.out.println("There are no one addons have been used");
@@ -39,5 +42,14 @@ public class Order<E extends Addons> {
                 orderPrice += addon.getPrice();
             }
         return orderPrice;
+    }
+
+    public double getOrderBonucePrice (){
+        int orderBonucePrice = 0;
+        orderBonucePrice += coffee.getBonucePrice();
+        for (E addon : addonsOrder){
+            orderBonucePrice += addon.getBonucePrice();
+        }
+        return orderBonucePrice;
     }
 }

@@ -32,9 +32,9 @@ class Cream extends Addons {
         }
 
         public void printInfo (){
-            System.out.println("Add cream x" + quantity);
+            System.out.println("cream x" + quantity + "\t\t\t|\t" + getPrice() +
+                    "$ \tor\t" + getBonucePrice() + " bonuces.");
         }
-
 
     }
 
@@ -58,7 +58,8 @@ class Cream extends Addons {
         }
 
         public void printInfo (){
-            System.out.println("Add milk x" + quantity);
+            System.out.println("milk x" + quantity + "\t\t\t\t|\t" + getPrice() +
+                    "$ \tor\t" + getBonucePrice() + " bonuces.");
         }
 
 
@@ -84,7 +85,8 @@ class Cream extends Addons {
         }
 
         public void printInfo (){
-            System.out.println("Add chocolate x" + quantity);
+            System.out.println("chocolate x" + quantity + "\t\t|\t" + getPrice() +
+                    "$ \tor\t" + getBonucePrice() + " bonuces.");
         }
 
 
