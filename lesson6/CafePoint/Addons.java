@@ -5,6 +5,7 @@ package com.lesson6.CafePoint;
 public abstract class Addons {
 
         abstract public double getPrice();
+        abstract public int getBonucePrice();
         abstract public void printInfo();
 
     }
@@ -12,6 +13,7 @@ public abstract class Addons {
 class Cream extends Addons {
 
         private int quantity;
+        private int bonucePrice;
 
         public Cream (){
                 this(1);
@@ -23,6 +25,10 @@ class Cream extends Addons {
         public double getPrice() {
 
             return quantity * 1.5;
+        }
+
+        public int getBonucePrice (){
+            return quantity * 1500;
         }
 
         public void printInfo (){
@@ -47,6 +53,10 @@ class Cream extends Addons {
             return quantity * 1.75;
         }
 
+        public int getBonucePrice (){
+            return quantity * 1750;
+        }
+
         public void printInfo (){
             System.out.println("Add milk x" + quantity);
         }
@@ -69,6 +79,9 @@ class Cream extends Addons {
             return quantity * 2.5;
         }
 
+        public int getBonucePrice (){
+            return quantity * 2500;
+        }
 
         public void printInfo (){
             System.out.println("Add chocolate x" + quantity);

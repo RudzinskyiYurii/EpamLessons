@@ -34,7 +34,10 @@ public class Order<E extends Addons> {
 
     public double getOrderPrice (){
         double orderPrice = 0;
-
+        orderPrice += coffee.getPrice();
+            for (E addon : addonsOrder){
+                orderPrice += addon.getPrice();
+            }
         return orderPrice;
     }
 }
