@@ -9,16 +9,17 @@ public class Order<E extends Addons> {
     Coffee coffee;
     //private List<Coffee> coffeeOrder = new LinkedList<>();
 
-    // add some addons
-    public void addAddon (E addon){
-        addonsOrder.add(addon);
-    }
-
     //add coffee
     public void addCoffee (Coffee coffee){
         this.coffee = coffee;
     }
 
+    // add some  addons
+    public void addAddon (E addon){
+        addonsOrder.add(addon);
+    }
+
+//print order like check
     public void printOrder(){
         // checking for not null order list
         if (addonsOrder != null){
@@ -37,7 +38,9 @@ public class Order<E extends Addons> {
 
     public double getOrderPrice (){
         double orderPrice = 0;
+        //add to order price coffee price
         orderPrice += coffee.getPrice();
+        //and add all addons price
             for (E addon : addonsOrder){
                 orderPrice += addon.getPrice();
             }
@@ -46,7 +49,9 @@ public class Order<E extends Addons> {
 
     public double getOrderBonucePrice (){
         int orderBonucePrice = 0;
+        //add to order price by bonuces coffee price
         orderBonucePrice += coffee.getBonucePrice();
+        //and add all addons price by bonuces
         for (E addon : addonsOrder){
             orderBonucePrice += addon.getBonucePrice();
         }

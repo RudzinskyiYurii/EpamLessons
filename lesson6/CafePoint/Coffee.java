@@ -12,11 +12,12 @@ public class Coffee {
         this.quantity =  quantity;
     }
 
+    //get coffee price in $
     public double getPrice() {
 
         return quantity * 3;
     }
-
+    //get coffee price in bonuces
     public int getBonucePrice (){
         return quantity * 3000;
     }

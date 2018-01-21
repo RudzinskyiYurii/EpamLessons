@@ -9,7 +9,7 @@ public class Client {
     public Client (Wallet wallet){
         this.wallet = wallet;
     }
-
+    //paying the order
     public void paing(Order order){
         PaySystem<Wallet> paySystem = new PaySystem<>();
         paySystem.paing(wallet, order);
