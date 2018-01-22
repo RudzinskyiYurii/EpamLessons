@@ -1,19 +1,29 @@
 package com;
 
 import com.lesson6.CafePoint.CafePointService;
+//import com.lesson6.CafePoint.Client;
 import com.lesson6.classwork.UsageGeneric;
+import com.lesson7.Client;
 
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Main {
+
+
 
     public static void main(String[] args) {
 
 
+        Client client = new Client();
+        client.makeOrder();
+
+
+/*
         CafePointService cafeSer = new CafePointService();
         cafeSer.usageCafePoint();
-
+*/
 
         /*
 
