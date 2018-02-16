@@ -1,5 +1,6 @@
 package com;
 
+import com.lesson10.serviceStatuses;
 import com.lesson6.CafePoint.CafePointService;
 //import com.lesson6.CafePoint.Client;
 import com.lesson6.classwork.UsageGeneric;
@@ -15,10 +16,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+        serviceStatuses serviceStatuses = new serviceStatuses();
+        serviceStatuses.usageStatus();
+/*
         Client client = new Client();
         client.makeOrder();
-
+*/
 
 /*
         CafePointService cafeSer = new CafePointService();
