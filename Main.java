@@ -1,6 +1,7 @@
 package com;
 
 import com.lesson10.serviceStatuses;
+import com.lesson11_bridgePattern.TestBridgePattern;
 import com.lesson6.CafePoint.CafePointService;
 //import com.lesson6.CafePoint.Client;
 import com.lesson6.classwork.UsageGeneric;
@@ -12,12 +13,13 @@ import java.util.List;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
 
+        new TestBridgePattern().testing();
+
+/*
         serviceStatuses serviceStatuses = new serviceStatuses();
-        serviceStatuses.usageStatus();
+        serviceStatuses.usageStatus();*/
 /*
         Client client = new Client();
         client.makeOrder();
