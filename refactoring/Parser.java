@@ -24,8 +24,12 @@ public class Parser {
 
         while (line != null)
         {
+            try{
             addLine = usageTheLine(line);
-            scope = addLine.addTheLine(scope, line);
+            scope = addLine.addTheLine(scope, line);}
+            catch (Exception ex){
+                scope = new AddWholeLine().addTheLine(scope, line);
+            }
             line = readLine(scriptTextToProcess);
         }
     }
