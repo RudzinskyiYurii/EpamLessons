@@ -1,13 +1,13 @@
 package com;
 
+import com.Exam.Shop;
+import com.Exam.ToolsService;
 import com.lesson10.serviceStatuses;
 import com.lesson11_bridgePattern.TestBridgePattern;
 import com.lesson6.CafePoint.CafePointService;
 //import com.lesson6.CafePoint.Client;
 import com.lesson6.classwork.UsageGeneric;
 import com.lesson7.Client;
-import com.refactoringLesson12.Refactoring;
-
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,12 +17,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Shop shop = new Shop();
+        shop.usageAllTHings();
 
+/*
         try {
             new Refactoring().Parse();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+
 /*
         new TestBridgePattern().testing();*/
 
