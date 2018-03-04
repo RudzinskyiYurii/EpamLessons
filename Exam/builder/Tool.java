@@ -1,14 +1,17 @@
 package com.Exam.builder;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Tool {
-    private String type;
+    private List<String> type = new LinkedList<>();
     private String name;
 
-    public void setType (String type){
-        this.type = type;
+    public void addType (String type){
+        this.type.add(type);
     }
 
-    public String getType(){
+    public List<String> getType(){
         return type;
     }
 

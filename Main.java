@@ -2,6 +2,7 @@ package com;
 
 import com.Exam.Shop;
 import com.Exam.ToolsService;
+import com.FirmHierarchy.Firm;
 import com.lesson10.serviceStatuses;
 import com.lesson11_bridgePattern.TestBridgePattern;
 import com.lesson6.CafePoint.CafePointService;
@@ -17,8 +18,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+Firm CrazyCock = new Firm();
+CrazyCock.firmWorking();
+
+/*
         Shop shop = new Shop();
-        shop.usageAllTHings();
+        shop.usageAllTHings();*/
 
 /*
         try {
