@@ -1,25 +1,32 @@
 package com;
 
-import com.Exam.Shop;
-import com.Exam.ToolsService;
-import com.FirmHierarchy.Firm;
-import com.lesson10.serviceStatuses;
-import com.lesson11_bridgePattern.TestBridgePattern;
-import com.lesson6.CafePoint.CafePointService;
+import com.CarWashStation.CarService;
 //import com.lesson6.CafePoint.Client;
-import com.lesson6.classwork.UsageGeneric;
-import com.lesson7.Client;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-Firm CrazyCock = new Firm();
-CrazyCock.firmWorking();
+        CarService carService = new CarService();
+        carService.usageWashCar();
+
+
+/*
+        UsageLambdasAndStreams usageLambdasAndStreams = new UsageLambdasAndStreams();
+        //usageLambdasAndStreams.firstTask();
+        usageLambdasAndStreams.secondTask();
+        //usageLambdasAndStreams.thirdTask();
+        //usageLambdasAndStreams.fourthTask();
+        //usageLambdasAndStreams.fifthTask();
+//        usageLambdasAndStreams.sixthTask();
+//        usageLambdasAndStreams.seventhTask();
+//        usageLambdasAndStreams.eigththTask();
+//        usageLambdasAndStreams.ninthTask();
+//        usageLambdasAndStreams.tenthTask();*/
+
+/*Firm CrazyCock = new Firm();
+CrazyCock.firmWorking();*/
 
 /*
         Shop shop = new Shop();
